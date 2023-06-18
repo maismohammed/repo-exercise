@@ -33,18 +33,23 @@ class User {
       this.log.push(challenge.id);
     }
   }
+
+  class challenge{
+    constructor(id,level){
+    this.id =id;
+    this.level=level;
+  } }
+
   var user1 = new User("JAD", 0, []);
   console.log(user1);
   
-  user1.newSolvedChallenge({
-    id: 1,
-    level: 'VE'
-  });
-  let o = {
-    id: 2,
-    level: 'ME'
-  };
-  user1.newSolvedChallenge(o);
+  user1.newSolvedChallenge(new challenge(1,"ME"));
+  // let o = {
+  //   id: 2,
+  //   level: 'ME'
+  // };
+  user1.newSolvedChallenge(new challenge(2,"ME"))
+  user1.newSolvedChallenge(new challenge(3,"EA"))
   console.log(user1.xp);
   console.log(user1.log);
   
